@@ -9,10 +9,14 @@ This app is open source, and will use an open source license such as Apache or M
 
 ## Tech Stack
 Relational Database: Amazon RDS
+
 NoSQL Database: Amazon DynamoDB or MongoDB
+
 ML: Python using Sci-kit Learn on Amazon EC2 or Amazon Sagemaker
+
 Web App Hosting: Amazon EC2 or ECS (back-up if time is short: Amazon API Gateway, AWS Lambda, PostMan)
-Front-end Programming Language: TBD. I'm much more of a backend kind of guy, but I would be open to Python with Django/Flask or JavaScript/HTML/CSS. We could even make this into a smartphone app in Java, but we can discuss that more later.
+
+Front-end: TBD. I'm much more of a backend kind of guy, but I would be open to Python with Django/Flask or JavaScript/HTML/CSS. We could even make this into a smartphone app in Java, but we can discuss that more later.
 
 ## Team Dynamic
 I am looking for 1-2 engineers to help assist in this project.  No stress if you are new to AWS!
