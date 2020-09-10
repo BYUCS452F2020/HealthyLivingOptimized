@@ -1,5 +1,5 @@
 # HealthyLivingOptimized
-This web app is designed to help you find the optimal lifestyle for you! So many workout and diet plans are out there that assume one size fits all for lifestyle, but we are taking a revolutionary approach to health by incorporating Machine Learning to help you find the optimal balance of diet, exercise and sleep for your goals!
+This web app is designed to help you find the optimal lifestyle for you! 
 
 # Goal of the App
 Make creating a healthy lifestyle easy, personalized, and free! Many great workout and diet plans exist behind pay walls, or are too general to be effective for everyone.  They work for some people, but others don't seem to see the same benefits. With HealthyLivingOptimized, you can create your own exercise and nutrition plans to help you achieve your fitness and lifestyle goals. With cutting age Machine Learning technology at your finger tips, HealthyLivingOptimized will continue to improve and tailor exercise and nutrition plans based on your feedback and goals, helping you live your optimal lifestyle.
