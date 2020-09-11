@@ -1,0 +1,2 @@
+I'd love to contribute! I'm familiar with using firebase as a backend, and creating android apps using java and flutter, but I would be willing to learn whatever 
+is necessary for me to contribute effectively!
