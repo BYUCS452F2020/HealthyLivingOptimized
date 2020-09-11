@@ -23,4 +23,4 @@ Robinson Paz added
 I am looking for 1-2 engineers to help assist in this project.  No stress if you are new to AWS!
 
 ## NoSQL Database type
-ACID (DynamoDB)
+ACID/Key-Value (DynamoDB)
