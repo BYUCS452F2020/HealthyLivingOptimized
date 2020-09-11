@@ -1,0 +1,5 @@
+This project targets issues about current health/fitness applications that I have personally experienced. Most applications either provide fitness plans that are too general or offer personalized premium content at a price. This project could provide a viable solution to this problem.
+
+I am also interested to see how machine learning can be utilized to help users find diets and plans that are specifically tailored for themselves.
+
+I can contribute to this project by helping with the AWS backend or web app hosting, as well as creating a frontend website or application for the project.
