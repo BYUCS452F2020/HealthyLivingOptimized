@@ -19,6 +19,7 @@ Web App Hosting: Amazon EC2 or ECS (back-up if time is short: Amazon API Gateway
 Front-end: TBD. I'm much more of a backend kind of guy, but I would be open to Python with Django/Flask or JavaScript/HTML/CSS. We could even make this into a smartphone app in Java, but we can discuss that more later.
 
 ## Team Dynamic
+Robinson Paz added
 I am looking for 1-2 engineers to help assist in this project.  No stress if you are new to AWS!
 
 ## NoSQL Database type
