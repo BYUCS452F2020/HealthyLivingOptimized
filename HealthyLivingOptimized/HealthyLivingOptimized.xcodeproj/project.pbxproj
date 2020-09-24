@@ -45,7 +45,6 @@
 		D14E4D49251D1A0400FC73DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14E4D48251D1A0400FC73DF /* Assets.xcassets */; };
 		D14E4D4C251D1A0400FC73DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14E4D4A251D1A0400FC73DF /* LaunchScreen.storyboard */; };
 		D14E4D55251D1A7700FC73DF /* Authenticate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14E4D53251D1A7700FC73DF /* Authenticate.storyboard */; };
-		D14E4D56251D1A7700FC73DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14E4D54251D1A7700FC73DF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +89,6 @@
 		D14E4D4B251D1A0400FC73DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D14E4D4D251D1A0400FC73DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D14E4D53251D1A7700FC73DF /* Authenticate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authenticate.storyboard; sourceTree = "<group>"; };
-		D14E4D54251D1A7700FC73DF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFE49D3446F9F437804E45EC /* Pods-HealthyLivingOptimized.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyLivingOptimized.release.xcconfig"; path = "Target Support Files/Pods-HealthyLivingOptimized/Pods-HealthyLivingOptimized.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				D14E4D53251D1A7700FC73DF /* Authenticate.storyboard */,
-				D14E4D54251D1A7700FC73DF /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -330,7 +327,6 @@
 				D14E4D4C251D1A0400FC73DF /* LaunchScreen.storyboard in Resources */,
 				D14E4D55251D1A7700FC73DF /* Authenticate.storyboard in Resources */,
 				D14E4D49251D1A0400FC73DF /* Assets.xcassets in Resources */,
-				D14E4D56251D1A7700FC73DF /* LaunchScreen.storyboard in Resources */,
 				D14E4D47251D19FA00FC73DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
