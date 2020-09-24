@@ -1,0 +1,14 @@
+User (Username PRIMARY KEY,First_name,Last_name,Email);
+  Username is Primary Key
+
+BodyMetrics (Metric_id PRIMARY KEY,Username,Age,Weight,Height_in_inches);
+  Metric_id is Primary Key
+  Username is Foreign key referencing User table
+  
+LifestyleStats (Stats_id PRIMARY KEY,Username,Date,Hours_of_sleep,Grams_of_protein,Type_of_exercise,Minutes_of_exercise)
+  Stats_id is Primary Key
+  Username is Foreign key referencing User table
+  
+Goals (Goal_id PRIMARY KEY, Username, Goal, Target_weight)
+  Goal_id is Primary Key
+  Username is Foreign key referencing User table
