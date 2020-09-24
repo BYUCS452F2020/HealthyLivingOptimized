@@ -1,0 +1,84 @@
+PODS:
+  - Alamofire (5.2.2)
+  - AWSCognitoIdentityProvider (2.15.1):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.15.1)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.15.1)
+  - BEMCheckBox (1.4.1)
+  - Eureka (5.2.1)
+  - IQKeyboardManagerSwift (6.5.6)
+  - KeychainAccess (4.2.0)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
+  - NVActivityIndicatorView (5.0.0):
+    - NVActivityIndicatorView/Base (= 5.0.0)
+  - NVActivityIndicatorView/Base (5.0.0)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PryntTrimmerView (4.0.0)
+  - SteviaLayout (4.7.3)
+  - SwiftyBeaver (1.9.1)
+  - SwiftyCam (4.0.0)
+  - YPImagePicker (4.3.1):
+    - PryntTrimmerView (~> 4.0.0)
+    - SteviaLayout (~> 4.7.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - AWSCognitoIdentityProvider
+  - AWSCore
+  - BEMCheckBox
+  - Eureka
+  - IQKeyboardManagerSwift
+  - KeychainAccess
+  - Kingfisher
+  - NVActivityIndicatorView
+  - PromiseKit/CorePromise (~> 6.8)
+  - PromiseKit/Foundation
+  - SwiftyBeaver
+  - SwiftyCam
+  - YPImagePicker
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - BEMCheckBox
+    - Eureka
+    - IQKeyboardManagerSwift
+    - KeychainAccess
+    - Kingfisher
+    - NVActivityIndicatorView
+    - PromiseKit
+    - PryntTrimmerView
+    - SteviaLayout
+    - SwiftyBeaver
+    - SwiftyCam
+    - YPImagePicker
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  AWSCognitoIdentityProvider: 5172f21b3530adbb1549501cd26e126bb211b85c
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: 7dec5eefb9b95739adec68dcb3dba2a6770376a6
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
+  Eureka: c883105488e05bc65539f583246ecf9657cabbfe
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  NVActivityIndicatorView: f109ed069924ac1b4adbc1ae9cfaeac0be1d6c2c
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  PryntTrimmerView: 67e67573ffd4c073f1308effa66aefd0cfa667a0
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+  SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
+  SwiftyCam: 6e57914771d972fbe508e759dc9d0150a44a93fd
+  YPImagePicker: 08bbb809ed62bf4149fc015c97249eb4b9463ff9
+
+PODFILE CHECKSUM: d54a8bb1f8f2bb314ed6ee3ba6e63b706471d1f5
+
+COCOAPODS: 1.9.3
