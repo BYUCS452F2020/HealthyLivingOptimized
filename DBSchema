@@ -1,14 +1,32 @@
 User (Username PRIMARY KEY,First_name,Last_name,Email);
   Username is Primary Key
+  First_name (self explanatory)
+  Last_name (self explanatory)
+  Email (self explanatory)
 
 BodyMetrics (Metric_id PRIMARY KEY,Username,Age,Weight,Height_in_inches);
   Metric_id is Primary Key
   Username is Foreign key referencing User table
+  Age (self explanatory)
+  Weight (self explanatory)
+  Height_in_inches (self explanatory)
+  Explanation: This table contains entities that track a User's body stats to help them measure how well they are meeting their fitness goals.
   
 LifestyleStats (Stats_id PRIMARY KEY,Username,Date,Hours_of_sleep,Grams_of_protein,Type_of_exercise,Minutes_of_exercise)
   Stats_id is Primary Key
   Username is Foreign key referencing User table
+  Date (self explanatory)
+  Hours_of_sleep (self explanatory)
+  Grams_of protein - grams of protein consumed that day
+  Type_of_exercise - type of exercise performed (i.e. 'HIIT', 'Cardio', 'Strength Training', 'Mobility')
+  Minutes_of_exercise (self explanatory)
+  Explanation: This table contains entities that track a User's daily lifestyle stats (sleep, diet, exercise).
   
 Goals (Goal_id PRIMARY KEY, Username, Goal, Target_weight)
   Goal_id is Primary Key
   Username is Foreign key referencing User table
+  Goal: Fitness goal a User is trying to acheive
+  Target_weight: a User's target weight
+  Explanation: This table contains entities that track a User's overall fitness/wellness goals.
+  
+Normalization: Each table has a unique Primary key, and a foreign key that references the correct User, so that the correct information is returned (i.e. if we are looking for a specific user's goals, we can find it easily)
