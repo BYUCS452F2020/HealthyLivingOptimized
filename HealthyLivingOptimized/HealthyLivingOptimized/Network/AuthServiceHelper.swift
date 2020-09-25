@@ -12,33 +12,41 @@ import AWSCognitoIdentityProvider
 class AuthServiceHelper {
     
     
-    class func getUserAttributes(email: String, name: String, userType: String) -> [AWSCognitoIdentityUserAttributeType] {
+    class func getUserAttributes(email: String,
+                                 firstName: String,
+                                 lastName: String) -> [AWSCognitoIdentityUserAttributeType] {
         var attributes = [AWSCognitoIdentityUserAttributeType]()
-        
+
         let emailAttr = AWSCognitoIdentityUserAttributeType()
         emailAttr?.name = "email"
         emailAttr?.value = email
         attributes.append(emailAttr!)
-        
+
         let nameAttr = AWSCognitoIdentityUserAttributeType()
         nameAttr?.name = "name"
-        nameAttr?.value = name
+        nameAttr?.value = "\(firstName) \(lastName)"
         attributes.append(nameAttr!)
-        
-        let userTypeTypeAttr = AWSCognitoIdentityUserAttributeType()
-        userTypeTypeAttr?.name = "custom:user_type"
-        userTypeTypeAttr?.value = userType
-        attributes.append(userTypeTypeAttr!)
-        
+
         return attributes
     }
     
-    class func getMetadata(career: String, internship: Bool, summerJob: Bool, entryJob: Bool) -> [String: String] {
+    class func getMetadata(firstName: String,
+                           lastName: String,
+                           email: String,
+                           weight: Double,
+                           age: Int,
+                           gender: String,
+                           goal: String,
+                           goalWeight: Double) -> [String: String] {
         var clientMetaData = [String: String]()
-        clientMetaData["career"] = career
-        clientMetaData["internship"] = internship ? "true" : "false"
-        clientMetaData["summer_job"] = summerJob ? "true" : "false"
-        clientMetaData["entry_job"] = entryJob ? "true" : "false"
+        clientMetaData["firstName"] = firstName
+        clientMetaData["lastName"] = lastName
+        clientMetaData["email"] = email
+        clientMetaData["weight"] = String(weight)
+        clientMetaData["age"] = String(age)
+        clientMetaData["gender"] = gender
+        clientMetaData["goal"] = goal
+        clientMetaData["goalWeight"] = String(goalWeight)
         return clientMetaData
     }
 }

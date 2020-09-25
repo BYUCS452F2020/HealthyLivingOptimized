@@ -12,9 +12,10 @@ class AuthNetwork {
     
     let authService = AuthService(networkProxy: .shared)
     
-    func signUp(name: String, career: String,  internship: Bool, summerJob: Bool, entryJob: Bool, email: String, password: String, userType: String, completed: @escaping (Bool, String?)->Void) {
-        authService.signUp(name: name, career: career, internship: internship, summerJob: summerJob, entryJob: entryJob, email: email, password: password, userType: userType, completed: completed)
+    func signUp(firstName: String, lastName: String,  email: String, password: String, currentWeight: Double, age: Int, gender: String, goal: String, goalWeight: Double, completed: @escaping (Bool, String?)->Void) {
+        
     }
+
     
     func signIn(email: String, password: String, completed: @escaping (Bool, String?)->Void) {
         authService.signIn(email: email, password: password, completed: completed)

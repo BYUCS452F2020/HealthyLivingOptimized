@@ -7,17 +7,21 @@
 //
 
 import UIKit
-
-import UIKit
 import Eureka
-//import ViewRow
 
 class SignUpViewController: FormViewController {
     
+    var firstName: String!
+    var lastName: String!
+    var email: String!
+    var password: String!
     
-    // MARK: - UI Properties
-//    let editPhotoView = EditPhotoView(frame: CGRect(x: 0, y: 0, width: 100, height: 150))
+    var currentWeight: Double!
+    var age: Int!
+    var gender: String!
     
+    var goal: String!
+    var goalWeight: Double!
     
     // MARK: - Init
     override func viewDidLoad() {
@@ -30,13 +34,6 @@ class SignUpViewController: FormViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = Assets.Color.pages
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleDismiss))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(didTapSave))
-        
-//        let profile = LocalDatabase.shared.getUser()
-        
-        
-//        editPhotoView.avatarView.set(with: profile?.imageUrl, placeholder: nil)
-//        editPhotoView.delegate = self
         
         /// Form
         form
@@ -46,121 +43,86 @@ class SignUpViewController: FormViewController {
             <<< NameRow(){ row in
                 row.title = "First Name"
                 row.placeholder = ""
+            }.onChange{ row in
+                self.firstName = row.value
             }
             <<< NameRow(){ row in
                 row.title = "Last Name"
                 row.placeholder = ""
+            }.onChange{ row in
+                self.lastName = row.value
             }
             <<< EmailRow() { row in
                 row.title = "Email"
+            }.onChange{ row in
+                self.email = row.value
+            }
+            <<< PasswordRow() { row in
+                row.title = "Password"
+            }.onChange{ row in
+                self.password = row.value
             }
             
             /// Current Stats
             +++ Section(header: "Current Stats", footer: "")
             <<< DecimalRow { row in
-                row.title = "Weight"
+                row.title = "Weight(lbs)"
+            }.onChange({ row in
+                self.currentWeight = row.value
+            })
+            <<< IntRow { row in
+                row.title = "Age"
+            }.onChange{ row in
+                self.age = row.value
+            }
+            <<< ActionSheetRow<String>() {
+                $0.title = "Gender"
+                $0.selectorTitle = "Pick a gender"
+                $0.options = ["Male", "Female"]
+                $0.value = "Male"
+            }.onChange{ row in
+                self.gender = row.value
+            }
+            
+            /// Goals
+            +++ Section(header: "Goals", footer: "")
+            <<< TextRow { row in
+                row.title = "Goal"
+            }.onChange{ row in
+                self.goal = row.value
             }
             <<< DecimalRow { row in
-                row.title = "Age"
+                row.title = "Target Weight(lbs)"
+            }.onChange{ row in
+                self.goalWeight = row.value
             }
-            <<< PickerRow<String> { row in
-                row.title = "Gender"
-                row.options = ["Male", "Female", "Other"]
-                
-            }
+            
+        +++ Section(header: "", footer: "")
+            <<< ButtonRow { row in
+                row.title = "Create Account"
+        }.onCellSelection {  cell, row in self.didTapCreateAccount() }
+        
     }
     
-    @objc private func didTapSave() {
-        /// Update Photo
+    @objc private func didTapCreateAccount() {
+        /// Get Values
+        guard let firstName = self.firstName else { return }
+        guard let lastName = self.lastName else { return }
+        guard let email = self.email else { return }
+        guard let password = self.password else { return }
+        
+        guard let currentWeight = self.currentWeight else { return }
+        guard let age = self.age else { return }
+        guard let gender = self.gender else { return }
+        
+        guard let goal = self.goal else { return }
+        guard let goalWeight = self.goalWeight else { return }
+        
+        /// Call AWS
+        let authNetwork = AuthNetwork()
+        authNetwork.signUp(firstName: firstName, lastName: lastName, email: email, password: password, currentWeight: currentWeight, age: age, gender: gender, goal: goal, goalWeight: goalWeight) { (success, message) in
+            
+        }
+        
     }
 }
-
-
-
-
-//class SignUpViewController: ScrollViewController {
-//
-//
-//    // MARK: - Properties
-////    let signupForm = SignUpForm()
-//
-//
-//    // MARK: - UI Properties
-////    let bottomView = BottomButtonView()
-//
-//
-//
-//    // MARK: - Init
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        setupViews()
-//        bind()
-//    }
-//
-//    private func setupViews() {
-//        view.backgroundColor = Assets.Color.pages
-//        title = "Create Account"
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.handleDismiss))
-//
-//        ///
-////        contentView.addSubview(signupForm)
-////        signupForm.anchor(top: contentView.safeAreaLayoutGuide.topAnchor, left: contentView.leftAnchor, bottom: contentView.bottomAnchor, right: contentView.rightAnchor, tCons: 0, lCons: 16, bCons: 0, rCons: 16)
-////
-////        /// Bottom view
-////        bottomView.applyButton.setTitle("Sign Up", for: .normal)
-////        bottomView.applyButton.backgroundColor = Assets.Color.darkText
-////        bottomView.applyButton.tintColor = Assets.Color.cellWhite
-////        view.addSubview(bottomView)
-////        bottomView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, heightCons: 100)
-//    }
-//
-//    private func bind() {
-////        bottomView.applyButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
-////        signupForm.delegate = self
-//    }
-//
-//
-//    // MARK: - Helper functions
-//    @objc private func didTapSignUp() {
-//
-////        guard signupForm.isFormCompleted() else {
-////            print("Missing something")
-////            return
-////        }
-////
-////        let loader = animateLoader()
-////
-////        let authNetwork = AuthNetwork()
-////        authNetwork.signUp(name: signupForm.name,
-////                                     career: signupForm.career,
-////                                     internship: signupForm.internshipCheck,
-////                                     summerJob: signupForm.summerJobCheck,
-////                                     entryJob: signupForm.entryLevelCheck,
-////                                     email: signupForm.email,
-////                                     password: signupForm.password,
-////                                     userType: signupForm.type == .student ? "IND" : "COMP")
-////        { [weak self] (success, message) in
-////            loader.stopAnimating()
-////
-////            if success { /// SignUp and SignIn succeeded
-////                let codeViewController = CodeVerifyViewController.createAreference()
-////                codeViewController.email = self?.signupForm.email
-////                codeViewController.authNetwork = authNetwork
-////                self?.navigationController?.pushViewController(codeViewController, animated: true)
-////            } else {
-////                self?.presentError(message: message)
-////            }
-////        }
-//    }
-//}
-//
-//
-//// MARK: - SignUpFormDelegate
-////extension SignUpViewController: SignUpFormDelegate {
-////
-////    func formDidChange(to type: SignUpForm.SignUpFormType) {
-////
-////
-////    }
-////}
