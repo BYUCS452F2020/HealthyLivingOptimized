@@ -33,6 +33,7 @@ class AuthServiceHelper {
     class func getMetadata(firstName: String,
                            lastName: String,
                            email: String,
+                           height: Double,
                            weight: Double,
                            age: Int,
                            gender: String,
@@ -42,6 +43,7 @@ class AuthServiceHelper {
         clientMetaData["firstName"] = firstName
         clientMetaData["lastName"] = lastName
         clientMetaData["email"] = email
+        clientMetaData["height"] = String(height)
         clientMetaData["weight"] = String(weight)
         clientMetaData["age"] = String(age)
         clientMetaData["gender"] = gender

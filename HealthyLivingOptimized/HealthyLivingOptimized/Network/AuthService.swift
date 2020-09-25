@@ -13,11 +13,11 @@ class AuthService: NetworkService {
     
     private let pool = AWSCognitoIdentityUserPool(forKey: AWSCognitoUserPoolsSignInProviderKey)
     
-    func signUp(firstName: String, lastName: String,  email: String, password: String, currentWeight: Double, age: Int, gender: String, goal: String, goalWeight: Double, completed: @escaping (Bool, String?)->Void) {
+    func signUp(firstName: String, lastName: String,  email: String, password: String, height: Double, currentWeight: Double, age: Int, gender: String, goal: String, goalWeight: Double, completed: @escaping (Bool, String?)->Void) {
         
         /// User Attributes
         let attributes = AuthServiceHelper.getUserAttributes(email: email, firstName: firstName, lastName: lastName)
-        let metadata = AuthServiceHelper.getMetadata(firstName: firstName, lastName: lastName, email: email, weight: currentWeight, age: age, gender: gender, goal: goal, goalWeight: goalWeight)
+        let metadata = AuthServiceHelper.getMetadata(firstName: firstName, lastName: lastName, email: email, height: height, weight: currentWeight, age: age, gender: gender, goal: goal, goalWeight: goalWeight)
         
         let defaultErrorMessage = "Please try again later"
         

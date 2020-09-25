@@ -12,8 +12,8 @@ class AuthNetwork {
     
     let authService = AuthService(networkProxy: .shared)
     
-    func signUp(firstName: String, lastName: String,  email: String, password: String, currentWeight: Double, age: Int, gender: String, goal: String, goalWeight: Double, completed: @escaping (Bool, String?)->Void) {
-        
+    func signUp(firstName: String, lastName: String,  email: String, password: String, height: Double, currentWeight: Double, age: Int, gender: String, goal: String, goalWeight: Double, completed: @escaping (Bool, String?)->Void) {
+        authService.signUp(firstName: firstName, lastName: lastName, email: email, password: password, height: height, currentWeight: currentWeight, age: age, gender: gender, goal: goal, goalWeight: goalWeight, completed: completed)
     }
 
     
