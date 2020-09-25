@@ -45,6 +45,8 @@
 		D14E4D49251D1A0400FC73DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14E4D48251D1A0400FC73DF /* Assets.xcassets */; };
 		D14E4D4C251D1A0400FC73DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14E4D4A251D1A0400FC73DF /* LaunchScreen.storyboard */; };
 		D14E4D55251D1A7700FC73DF /* Authenticate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14E4D53251D1A7700FC73DF /* Authenticate.storyboard */; };
+		D1C3404F251E694700B84901 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C3404E251E694700B84901 /* HomeViewController.swift */; };
+		D1C34051251E697A00B84901 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C34050251E697A00B84901 /* HomeViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,8 @@
 		D14E4D4B251D1A0400FC73DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D14E4D4D251D1A0400FC73DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D14E4D53251D1A7700FC73DF /* Authenticate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authenticate.storyboard; sourceTree = "<group>"; };
+		D1C3404E251E694700B84901 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D1C34050251E697A00B84901 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		EFE49D3446F9F437804E45EC /* Pods-HealthyLivingOptimized.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyLivingOptimized.release.xcconfig"; path = "Target Support Files/Pods-HealthyLivingOptimized/Pods-HealthyLivingOptimized.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				D14E4D53251D1A7700FC73DF /* Authenticate.storyboard */,
+				D1C34050251E697A00B84901 /* HomeViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				D1139542251D1AD300B5EF23 /* SignUpViewController.swift */,
 				D113957E251D2E1200B5EF23 /* MainViewController.swift */,
 				D1139580251D2E4900B5EF23 /* ScrollViewController.swift */,
+				D1C3404E251E694700B84901 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C34051251E697A00B84901 /* HomeViewController.storyboard in Resources */,
 				D14E4D4C251D1A0400FC73DF /* LaunchScreen.storyboard in Resources */,
 				D14E4D55251D1A7700FC73DF /* Authenticate.storyboard in Resources */,
 				D14E4D49251D1A0400FC73DF /* Assets.xcassets in Resources */,
@@ -383,6 +390,7 @@
 				D1139572251D2CAA00B5EF23 /* CustomTextView.swift in Sources */,
 				D1139543251D1AD300B5EF23 /* SignInViewController.swift in Sources */,
 				D14E4D44251D19FA00FC73DF /* ViewController.swift in Sources */,
+				D1C3404F251E694700B84901 /* HomeViewController.swift in Sources */,
 				D1139571251D2CAA00B5EF23 /* KeyboardConstraint.swift in Sources */,
 				D113954C251D1BE900B5EF23 /* SignUpViewModel.swift in Sources */,
 				D1139551251D1C1500B5EF23 /* AuthService.swift in Sources */,

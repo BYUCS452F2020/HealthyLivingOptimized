@@ -11,6 +11,10 @@ import UIKit
 struct Assets {
     struct Image {
         
+        /// Using
+         static let arrowShareFill = UIImage(systemName: "arrowshape.turn.up.left.fill")?.withRenderingMode(.alwaysTemplate)
+        static let tray = UIImage(systemName: "tray.fill")?.withRenderingMode(.alwaysTemplate)
+        
         static let logo = UIImage(named: "logo")
         static let background = UIImage(named: "background")
         
@@ -20,7 +24,6 @@ struct Assets {
         static let bookmarkFill = UIImage(systemName: "bookmark.fill")?.withRenderingMode(.alwaysTemplate)
         static let settings = UIImage(systemName: "slider.horizontal.3")?.withRenderingMode(.alwaysTemplate)
         static let arrowShare = UIImage(systemName: "arrowshape.turn.up.right")?.withRenderingMode(.alwaysTemplate)
-        static let arrowShareFill = UIImage(systemName: "arrowshape.turn.up.right.fill")?.withRenderingMode(.alwaysTemplate)
         static let document = UIImage(systemName: "doc.plaintext")?.withRenderingMode(.alwaysTemplate)
         static let play = UIImage(systemName: "play.fill")?.withRenderingMode(.alwaysTemplate)
         static let plus = UIImage(systemName: "plus.circle.fill")?.withRenderingMode(.alwaysTemplate)

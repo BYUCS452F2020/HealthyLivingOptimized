@@ -24,8 +24,8 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         bind()
-        emailField.text = "robinson.paz.jesus+5@gmail.com"
-        passwordField.text = "asd123!AA"
+        emailField.text = "robinson.paz.jesus+@gmail.com"
+        passwordField.text = "password"
     }
     
     private func setupViews() {
@@ -53,7 +53,6 @@ extension SignInViewController {
     }
     
     
-    
     @IBAction func didTapDontHaveAccount(_ sender: Any) {
         guard let pageVC = parent as? AuthenticateViewController else { return }
         pageVC.setViewControllers([pageVC.getStartedViewController], direction: .reverse, animated: true)
@@ -65,17 +64,17 @@ extension SignInViewController {
 extension SignInViewController: SignInDelegate {
     
     func signIn(didStart: Bool) {
-//        loader = animateLoader()
+        loader = animateLoader()
     }
     
     func signInDidFinish(didSucceed: Bool, errorMessage: String?) {
         loader?.stopAnimating()
         
-//        if didSucceed {
-//            routeManager.displayMain()
-//        } else {
-//            presentError(message: errorMessage ?? "Sign in did not work. Please try again later.")
-//        }
+        if didSucceed {
+            routeManager.displayMain()
+        } else {
+            presentError(message: errorMessage ?? "Sign in did not work. Please try again later.")
+        }
     }
     
 }

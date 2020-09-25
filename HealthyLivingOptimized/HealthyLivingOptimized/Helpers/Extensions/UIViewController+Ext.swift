@@ -22,8 +22,9 @@ extension UIViewController {
     }
     
     func setCleanNavBar() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = Assets.Color.pages
+        navigationController?.navigationBar.barTintColor = .clear
         navigationItem.largeTitleDisplayMode = .never
     }
 }

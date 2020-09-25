@@ -8,11 +8,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UITabBarController {
     
     // MARK: - Properties
     
     // MARK: - UI Properties
+    let homeViewController = HomeViewController.createAreference()
     
     // MARK: - Init
     override func viewDidLoad() {
@@ -23,6 +24,9 @@ class MainViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .green
+        let homeNav = UINavigationController(rootViewController: homeViewController)
+        homeViewController.tabBarItem.image =  Assets.Image.personFill
+        viewControllers = [homeNav]
     }
     
     private func bind() {

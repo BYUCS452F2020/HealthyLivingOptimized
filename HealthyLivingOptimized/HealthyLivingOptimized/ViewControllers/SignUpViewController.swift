@@ -66,7 +66,7 @@ class SignUpViewController: FormViewController {
             }
             <<< PasswordRow() { row in
                 row.title = "Password"
-                row.value = "Aasdasd!2"
+                row.value = "password"
                 self.password = row.value
             }.onChange{ row in
                 self.password = row.value
