@@ -19,10 +19,7 @@ class AWSManager {
     static var shared = AWSManager()
     private init() {}
     
-    let CognitoIdentityUserPoolRegion: AWSRegionType = .USEast1
-    let CognitoIdentityUserPoolId = "us-east-1_BZBsibQMf"
-    let CognitoIdentityUserPoolAppClientId = "3116mnhv3po1923ahl4iqkp3v3"
-    let CognitoIdentityUserPoolAppClientSecret = "epnd02v7petdbec023ca27j4vom9orloh7mjm21eevitj2jamtr"
+    
     
     func start() {
         

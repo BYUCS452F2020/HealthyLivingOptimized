@@ -14,23 +14,24 @@ public typealias AuthString = String
 public enum Resource {
 
     case getProfile
-    case getMyVideos
-    case getFeed(String, String, String)
-    case getCompany(String)
+    case getHistory
+    case getRecommendation
+    case updateProfile
+    case postDailyEntry
     
-    public var resource: (method: HTTPMethod, route: String, needsToken: Bool) {
+    public var resource: (method: HTTPMethod, route: String) {
         switch self {
         case .getProfile:
-            return (.get, "/users/me/myprofile", true)
+            return (.get, "/me/profile")
+        case .getHistory:
+            return (.get, "/me/history")
+        case .getRecommendation:
+            return (.get, "/me/recommendation")
+        case .updateProfile:
+            return (.patch, "/me/profile")
+        case .postDailyEntry:
+            return (.post, "/me/history")
             
-        case .getMyVideos:
-            return (.get, "/users/me/myvideos", true)
-            
-        case .getFeed(let major, let jobType, let state):
-            return (.get, "/jobs?major=\(major)&jobType=\(jobType)&city=\(state)", false)
-            
-        case .getCompany(let id):
-            return (.get, "/companies?id=\(id)", false)
         }
     }
 }

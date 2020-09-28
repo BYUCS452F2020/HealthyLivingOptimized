@@ -16,7 +16,7 @@ public typealias JSON = [String: Any]
 class NetworkProxy {
     
     public enum ServerURL: String {
-        case base = "https://q8kdd9fiu7.execute-api.us-west-2.amazonaws.com/prod"
+        case base = "https://buuam494oj.execute-api.us-east-1.amazonaws.com/prod"
     }
     
     static let shared = NetworkProxy(baseURL: ServerURL.base)
