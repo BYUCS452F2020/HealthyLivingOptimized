@@ -2,13 +2,13 @@ from faker import Faker
 import pandas
 import numpy
 import uuid
+
+fake = Faker()
+
 import mysql.connector
 import sys
 import boto3
 import os
-import random
-
-fake = Faker()
 
 ssm = boto3.client('ssm')
 
@@ -22,28 +22,23 @@ password = ssm.get_parameter(Name='HLO-DB-Password')['Parameter']['Value']
 
 #gets the credentials from .aws/credentials
 client = boto3.client('rds')
-goal_list = ['Weight Loss', 'Target Weight', 'Improved Mood', 'Muscle Gain']
-
 
 try:
     conn =  mysql.connector.connect(host=ENDPOINT, user=USR, passwd=password, port=PORT, database=DBNAME)
     cur = conn.cursor()
-    # cur.execute("SELECT * FROM User")
-    # query_results = cur.fetchall()
-    # for result in query_results:
-    #     username = result[0]
-    #     goal_id = str(uuid.uuid4())
-    #     goal = goal_list[random.randint(0,len(goal_list)-1)]
-    #     target_weight = random.randint(100,180)
-    #     sql = "INSERT INTO Goals (Goal_id, Username, Goal, Target_weight) VALUES (%s, %s, %s, %s)"
-    #     val = (goal_id, username, goal, target_weight)
-    #     cur.execute(sql, val)
-   
-    #TODO - for more realistic data, might want to change goal/target weight based on user's current height and weight
-   
-    cur.execute("SELECT * FROM Goals")
+    for i in range(10):
+        profile = fake.profile()
+        email = profile['mail'] #in faker
+        password = profile['username']#in faker
+        name_list = profile['name'].split(" ")
+        first_name = name_list[0] #in faker
+        last_name = name_list[1] #in faker
+        sql = "INSERT INTO User (Email, Password, First_name, Last_name) VALUES (%s, %s, %s, %s)"
+        val = (email, password, first_name, last_name)
+        cur.execute(sql, val)
+    cur.execute("SELECT * FROM User")
     query_results = cur.fetchall()
-    # conn.commit()
+    conn.commit()
     print(query_results)
 except Exception as e:
     print("Database connection failed due to {}".format(e))          

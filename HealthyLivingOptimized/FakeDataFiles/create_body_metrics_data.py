@@ -34,12 +34,12 @@ try:
     query_results = cur.fetchall()
     for result in query_results:
         metric_id = str(uuid.uuid4())
-        username = result[0]
+        email = result[0]
         age = random.randint(18, 85)
         height = random.randint(59, 82)
         weight = random.randint(95, 350)
-        sql = "INSERT INTO BodyMetrics (Metric_id, Username, Age, Weight, Height_in_inches) VALUES (%s, %s, %s, %s, %s)"
-        val = (metric_id, username, age, weight, height)
+        sql = "INSERT INTO BodyMetrics (Metric_id, Email, Age, Weight, Height_in_inches) VALUES (%s, %s, %s, %s, %s)"
+        val = (metric_id, email, age, weight, height)
         cur.execute(sql, val)
     cur.execute("SELECT * FROM BodyMetrics")
     query_results = cur.fetchall()
