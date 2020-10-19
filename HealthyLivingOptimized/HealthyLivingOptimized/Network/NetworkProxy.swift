@@ -38,7 +38,8 @@ class NetworkProxy {
             log.info(resource.resource.route, "Route")
             do {
                 let url = try "\(baseURL)\(resource.resource.route)".asURL()
-                let httpRequest = createHttpRequest(url: url, body: parameters, resource: resource, includeTokens: resource.resource.needsToken)
+                let httpRequest = createHttpRequest(url: url, body: parameters, resource: resource, includeTokens: false)
+
                 log.info("Request for url: \(url)")
 //                print("***      \(httpRequest.headers)      ***")
                 URLSession.shared.dataTask(.promise, with: httpRequest).validate()

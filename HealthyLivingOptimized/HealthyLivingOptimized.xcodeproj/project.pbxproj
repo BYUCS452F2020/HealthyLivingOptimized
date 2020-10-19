@@ -45,6 +45,10 @@
 		D14E4D49251D1A0400FC73DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14E4D48251D1A0400FC73DF /* Assets.xcassets */; };
 		D14E4D4C251D1A0400FC73DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14E4D4A251D1A0400FC73DF /* LaunchScreen.storyboard */; };
 		D14E4D55251D1A7700FC73DF /* Authenticate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14E4D53251D1A7700FC73DF /* Authenticate.storyboard */; };
+		D1BDBCB2253DF1D50022D92E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDBCB1253DF1D50022D92E /* HistoryViewController.swift */; };
+		D1BDBCB5253DF3FA0022D92E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDBCB4253DF3FA0022D92E /* HistoryCell.swift */; };
+		D1BDBCB7253DF7F00022D92E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDBCB6253DF7F00022D92E /* ProfileViewController.swift */; };
+		D1BDBCB9253DFBB40022D92E /* FetcherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDBCB8253DFBB40022D92E /* FetcherController.swift */; };
 		D1C3404F251E694700B84901 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C3404E251E694700B84901 /* HomeViewController.swift */; };
 		D1C34051251E697A00B84901 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C34050251E697A00B84901 /* HomeViewController.storyboard */; };
 /* End PBXBuildFile section */
@@ -91,6 +95,10 @@
 		D14E4D4B251D1A0400FC73DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D14E4D4D251D1A0400FC73DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D14E4D53251D1A7700FC73DF /* Authenticate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authenticate.storyboard; sourceTree = "<group>"; };
+		D1BDBCB1253DF1D50022D92E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		D1BDBCB4253DF3FA0022D92E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		D1BDBCB6253DF7F00022D92E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D1BDBCB8253DFBB40022D92E /* FetcherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetcherController.swift; sourceTree = "<group>"; };
 		D1C3404E251E694700B84901 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D1C34050251E697A00B84901 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		EFE49D3446F9F437804E45EC /* Pods-HealthyLivingOptimized.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyLivingOptimized.release.xcconfig"; path = "Target Support Files/Pods-HealthyLivingOptimized/Pods-HealthyLivingOptimized.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 				D113954E251D1C1500B5EF23 /* AuthNetwork.swift */,
 				D113954F251D1C1500B5EF23 /* AuthService.swift */,
 				D1139578251D2D6600B5EF23 /* AuthServiceHelper.swift */,
+				D1BDBCB8253DFBB40022D92E /* FetcherController.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -228,6 +237,7 @@
 		D14E4D3E251D19FA00FC73DF /* HealthyLivingOptimized */ = {
 			isa = PBXGroup;
 			children = (
+				D1BDBCB3253DF3EF0022D92E /* Views */,
 				D1139575251D2D3E00B5EF23 /* Managers */,
 				D113954D251D1C0900B5EF23 /* Network */,
 				D1139548251D1BDD00B5EF23 /* ViewModels */,
@@ -264,10 +274,20 @@
 				D113953E251D1AD300B5EF23 /* SignInViewController.swift */,
 				D1139542251D1AD300B5EF23 /* SignUpViewController.swift */,
 				D113957E251D2E1200B5EF23 /* MainViewController.swift */,
+				D1BDBCB1253DF1D50022D92E /* HistoryViewController.swift */,
 				D1139580251D2E4900B5EF23 /* ScrollViewController.swift */,
 				D1C3404E251E694700B84901 /* HomeViewController.swift */,
+				D1BDBCB6253DF7F00022D92E /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D1BDBCB3253DF3EF0022D92E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D1BDBCB4253DF3FA0022D92E /* HistoryCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +418,7 @@
 				D1139581251D2E4900B5EF23 /* ScrollViewController.swift in Sources */,
 				D1139547251D1AD300B5EF23 /* SignUpViewController.swift in Sources */,
 				D1139545251D1AD300B5EF23 /* CodeVerifyViewController.swift in Sources */,
+				D1BDBCB9253DFBB40022D92E /* FetcherController.swift in Sources */,
 				D1139579251D2D6600B5EF23 /* AuthServiceHelper.swift in Sources */,
 				D1139550251D1C1500B5EF23 /* AuthNetwork.swift in Sources */,
 				D1139569251D2CAA00B5EF23 /* AddIdentifier.swift in Sources */,
@@ -417,9 +438,12 @@
 				D1139559251D1C2800B5EF23 /* Encoders.swift in Sources */,
 				D1139553251D1C2000B5EF23 /* NetworkService.swift in Sources */,
 				D1139544251D1AD300B5EF23 /* GetStartedViewController.swift in Sources */,
+				D1BDBCB5253DF3FA0022D92E /* HistoryCell.swift in Sources */,
 				D113956F251D2CAA00B5EF23 /* UINavigationItem+Ext.swift in Sources */,
 				D113956A251D2CAA00B5EF23 /* UIView.swift in Sources */,
 				D1139557251D1C2800B5EF23 /* Resource.swift in Sources */,
+				D1BDBCB7253DF7F00022D92E /* ProfileViewController.swift in Sources */,
+				D1BDBCB2253DF1D50022D92E /* HistoryViewController.swift in Sources */,
 				D1139574251D2D1E00B5EF23 /* Assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

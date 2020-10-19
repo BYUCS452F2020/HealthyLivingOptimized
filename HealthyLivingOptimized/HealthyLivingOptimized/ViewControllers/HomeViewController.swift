@@ -33,9 +33,6 @@ class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: Assets.Image.tray, style: .done, target: self, action: #selector(didTapHistory))
         navigationController?.navigationBar.tintColor = .white
         
-        
-            
-        
         topViewContainer.add(radius: 12, shadow: true)
         bottomViewContainer.add(radius: 12, shadow: true)
     }
@@ -47,6 +44,7 @@ class HomeViewController: UIViewController {
     // MARK: - Helper functions
     @IBAction func didTapSubmit(_ sender: Any) {
         print("Will submit")
+        routeManager.performLogout()
     }
     
     static func createAreference() -> HomeViewController {
@@ -60,11 +58,14 @@ class HomeViewController: UIViewController {
     }
     
     @objc func didTapProfile() {
-        print("Profile")
+        let profileViewController = ProfileViewController.createAreference()
+        profileViewController.hidesBottomBarWhenPushed = true
+        present(profileViewController, animated: true, completion:  nil)
     }
     
     @objc func didTapHistory() {
-        print("didTapHistory")
-        routeManager.performLogout()
+        let historyViewController = HistoryViewController.createAreference()
+        historyViewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(historyViewController, animated: true)
     }
 }
