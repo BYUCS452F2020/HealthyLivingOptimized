@@ -13,18 +13,18 @@ public typealias AuthString = String
 
 public enum Resource {
 
-    case getProfile
-    case getHistory
+    case getProfile(String)
+    case getHistory(String)
     case getRecommendation
     case updateProfile
     case postDailyEntry
     
     public var resource: (method: HTTPMethod, route: String) {
         switch self {
-        case .getProfile:
-            return (.get, "/me/profile")
-        case .getHistory:
-            return (.get, "/me/history")
+        case .getProfile(let email):
+            return (.get, "/me/profile?email=\(email)")
+        case .getHistory(let email):
+            return (.get, "/me/history?email=\(email)")
         case .getRecommendation:
             return (.get, "/me/recommendation")
         case .updateProfile:

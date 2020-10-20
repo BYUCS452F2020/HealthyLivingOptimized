@@ -11,7 +11,7 @@ import UIKit
 class HistoryCell: UICollectionViewCell {
     
     static let identifier = "HistoryCellIdentifier"
-    
+    let df = DateFormatter()
     let title: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 24)
@@ -46,11 +46,19 @@ class HistoryCell: UICollectionViewCell {
         
     }
     
-    func configure(title: String, body: String) {
-        self.title.text = title
+    func configure(model: EntryHistoryModel) {
+        
+        df.dateFormat = "yyyy-MM-dd"
+        let date = df.date(from: model.date!)
+        df.dateFormat = "EEEE, MMM d"
+        self.title.text = df.string(from: date!)
+        
+        var body = "\("🛌💤".randomElement()!) \(model.hoursOfSleep) hours of sleep.\n"
+        body += "\("🥑🍗".randomElement()!) \(model.gramsOfProtein) grams of protein.\n"
+        body += "\("🏋️‍♂️💪".randomElement()!) \(model.minutesOfExercise) minutes of exercise."
         self.body.text = body
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

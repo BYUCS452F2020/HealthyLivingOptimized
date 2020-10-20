@@ -36,7 +36,6 @@ class ProfileViewController: UIViewController {
     }
     
     private func setupViews() {
-        title = "Profile"
         topBackView.add(radius: 16, shadow: true)
         bottomBackView.add(radius: 16, shadow: true)
     }
@@ -46,13 +45,28 @@ class ProfileViewController: UIViewController {
     }
     
     private func load() {
+    
+        let loader = animateLoader()
         fetcher.getProfile()
             .done { profileModel in
-                print("Done! ", profileModel)
-        }.catch { log.error($0) }
+                self.loadUI(with: profileModel)
+            }.catch { log.error($0) }
+            .finally {
+                loader.stopAnimating()
+            }
     }
     
     // MARK: - Helper functions
+    func loadUI(with profile: ProfileModel) {
+        nameField.text = "\(profile.firstName) \(profile.lastName)"
+        emailField.text = profile.email
+        
+        heightField.text = "\(profile.heightInInches) inches"
+        weightField.text = "\(profile.weight) pounds"
+        ageField.text = "\(profile.age) years old"
+        genderField.text = "\(profile.gender)"
+    }
+    
     static func createAreference() -> ProfileViewController {
         
         let storyboard = UIStoryboard(name: "HomeViewController", bundle: nil)

@@ -117,5 +117,14 @@ extension NetworkProxy {
     func removeAuthToken() throws {
         try self.keychain.remove("authToken")
     }
+    
+    
+    func setEmail(email: String) throws {
+        try self.keychain.set(email, key: "userEmail")
+    }
+    
+    func getEmail() -> String? {
+        return keychain["userEmail"]
+    }
 }
 

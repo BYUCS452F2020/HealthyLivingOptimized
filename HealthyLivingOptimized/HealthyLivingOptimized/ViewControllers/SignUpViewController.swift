@@ -109,7 +109,7 @@ class SignUpViewController: FormViewController {
             +++ Section(header: "Goals", footer: "")
             <<< TextRow { row in
                 row.title = "Goal"
-                row.value = "I want to loose weight and be more active."
+                row.value = "Weight Loss"
                 self.goal = row.value
             }.onChange{ row in
                 self.goal = row.value

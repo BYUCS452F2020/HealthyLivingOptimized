@@ -19,6 +19,10 @@ class AuthService: NetworkService {
         let attributes = AuthServiceHelper.getUserAttributes(email: email, firstName: firstName, lastName: lastName)
         let metadata = AuthServiceHelper.getMetadata(firstName: firstName, lastName: lastName, email: email, height: height, weight: currentWeight, age: age, gender: gender, goal: goal, goalWeight: goalWeight)
         
+//        print(attributes)
+//        print(metadata)
+//        return
+        
         let defaultErrorMessage = "Please try again later"
         
         pool?.signUp(email, password: password, userAttributes: attributes, validationData: nil, clientMetaData: metadata).continueWith(block: { (task) -> Any? in
@@ -59,6 +63,7 @@ class AuthService: NetworkService {
                 } else if let session = task.result, let authToken = session.accessToken?.tokenString, let idToken = session.idToken?.tokenString {
                     try? self?.networkProxy.setAuthToken(authToken: authToken)
                     try? self?.networkProxy.setIdToken(idToken: idToken)
+                    try? self?.networkProxy.setEmail(email: email)
                     log.debug("Access_Token: \n" + authToken)
                     log.debug("Id_Token: \n" + session.idToken!.tokenString)
                     completed(true, nil)

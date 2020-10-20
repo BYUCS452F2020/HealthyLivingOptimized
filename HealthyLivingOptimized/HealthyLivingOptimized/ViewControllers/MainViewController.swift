@@ -26,6 +26,7 @@ class MainViewController: UITabBarController {
         view.backgroundColor = .green
         let homeNav = UINavigationController(rootViewController: homeViewController)
         homeViewController.tabBarItem.image =  Assets.Image.personFill
+        homeViewController.tabBarItem.title = "Home"
         viewControllers = [homeNav]
     }
     

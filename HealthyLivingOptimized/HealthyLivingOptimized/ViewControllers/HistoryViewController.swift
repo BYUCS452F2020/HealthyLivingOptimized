@@ -12,6 +12,7 @@ class HistoryViewController: UIViewController {
     
     // MARK: - Properties
     let fetcherController = FetcherController()
+    var entries: [EntryHistoryModel]?
     
     // MARK: - UI Properties
     var collectionView: UICollectionView!
@@ -25,6 +26,8 @@ class HistoryViewController: UIViewController {
     }
     
     private func setupViews() {
+        /// nav
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Assets.Image.close, style: .done, target: self, action: #selector(didTapLogout))
         
         // collection view
         let layout = UICollectionViewFlowLayout()
@@ -32,10 +35,14 @@ class HistoryViewController: UIViewController {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = .clear
-        collectionView.clipsToBounds = false
+        collectionView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
         collectionView.register(HistoryCell.self, forCellWithReuseIdentifier: HistoryCell.identifier)
         view.addSubview(collectionView)
-        collectionView.fillSuperview(padding: UIEdgeInsets(top: 200, left: 0, bottom: 0, right: 0))
+        collectionView.fillSuperview()
+    }
+    
+    @objc func didTapLogout() {
+        routeManager.performLogout()
     }
     
     private func bind() {
@@ -46,8 +53,7 @@ class HistoryViewController: UIViewController {
     private func load() {
         fetcherController.getHistory()
             .done { entries in
-                print("Done")
-                
+                self.reloadData(entries: entries)
         }.catch { log.error($0) }
     }
     
@@ -61,16 +67,21 @@ class HistoryViewController: UIViewController {
             return HistoryViewController()
         }
     }
+    
+    func reloadData(entries: [EntryHistoryModel]) {
+        self.entries = entries
+        collectionView.reloadData()
+    }
 }
 
 extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return entries?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCell.identifier, for: indexPath) as! HistoryCell
-        cell.configure(title: "September 20, 2020", body: "1. 30 mins wo\n2. 8 hrs sleep\n3. 100g in protein")
+        cell.configure(model: entries![indexPath.row])
         return cell
     }
     
