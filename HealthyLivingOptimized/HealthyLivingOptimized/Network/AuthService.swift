@@ -26,7 +26,7 @@ class AuthService: NetworkService {
         let defaultErrorMessage = "Please try again later"
         
         pool?.signUp(email, password: password, userAttributes: attributes, validationData: nil, clientMetaData: metadata).continueWith(block: { (task) -> Any? in
-            
+            try? self.networkProxy.setEmail(email: email)
             DispatchQueue.main.async {
                 
                 if let error = task.error as NSError? {
@@ -36,6 +36,7 @@ class AuthService: NetworkService {
                     return
                     
                 } else if let result = task.result  {
+                    
                     completed(true, result.userSub)
                     return
                 }

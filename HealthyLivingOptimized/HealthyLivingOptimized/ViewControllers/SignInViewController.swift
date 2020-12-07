@@ -24,7 +24,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         bind()
-        emailField.text = "robinson.paz.jesus+@gmail.com"
+        emailField.text = "robinson.paz.jesus@gmail.com"
         passwordField.text = "password"
     }
     

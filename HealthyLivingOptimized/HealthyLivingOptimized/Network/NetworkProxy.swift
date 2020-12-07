@@ -44,7 +44,7 @@ class NetworkProxy {
 //                print("***      \(httpRequest.headers)      ***")
                 URLSession.shared.dataTask(.promise, with: httpRequest).validate()
                     .map { args in
-//                        print(args.data.toString())
+                        print(args.data)
                         let decoded = try self.decode(type, from: args.data)
                         seal.fulfill(decoded)
                 }

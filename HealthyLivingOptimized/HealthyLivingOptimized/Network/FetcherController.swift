@@ -12,6 +12,7 @@ import PromiseKit
 class FetcherService: NetworkService {
     
     func getProfile(for email: String) -> Promise<ProfileModel> {
+        print(">>>> MAKE REQUEST WITH: ", email)
         return networkProxy.codableRequest(.getProfile(email), as: ProfileModel.self)
     }
     
@@ -21,6 +22,10 @@ class FetcherService: NetworkService {
     
     func postEntry(body: [String:String]) -> Promise<SuccessResponse> {
         return networkProxy.codableRequest(.postDailyEntry, parameters: body, as: SuccessResponse.self)
+    }
+    
+    func deleteEntry(with id: String, for email: String) -> Promise<SuccessResponse> {
+        return networkProxy.codableRequest(.deleteEntry(id, email), as: SuccessResponse.self)
     }
     
 }
@@ -46,6 +51,10 @@ class FetcherController {
     func postEntry(body: [String:String]) -> Promise<SuccessResponse> {
         return fetcherService.postEntry(body: body)
     }
+    
+    func deleteEntry(with id: String, for email: String) -> Promise<SuccessResponse> {
+        return fetcherService.deleteEntry(with: id, for: email)
+    }
 }
 
 struct ProfileModel: Codable {
@@ -55,7 +64,7 @@ struct ProfileModel: Codable {
     var gender: String
     var age: Int
     var weight: Double
-    var heightInInches: Double
+    var height: Double
 }
 
 //struct HistoryResponse: Codable {
@@ -63,12 +72,13 @@ struct ProfileModel: Codable {
 //}
 
 struct EntryHistoryModel: Codable {
+    var entryId: String
     var date: String?
-    var hoursOfSleep: Double
-    var gramsOfProtein: Double
+    var hoursOfSleep: String
+    var gramsOfProtein: String
     var typeOfExercise: String
-    var minutesOfExercise: Int
-    var currentWeight: Double
+    var minutesOfExercise: String
+    var currentWeight: String
     var mood: String
     var muscleGrowth: String
 }

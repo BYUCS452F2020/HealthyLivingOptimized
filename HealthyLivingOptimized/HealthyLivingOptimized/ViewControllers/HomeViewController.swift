@@ -51,6 +51,8 @@ class HomeViewController: UIViewController {
         let month = formatter.string(from: Date())
         formatter.dateFormat = "dd"
         let day = formatter.string(from: Date())
+//        formatter.dateFormat = "hh:mm:ss"
+//        let secs = formatter.string(from: Date())
         return "\(year)-\(month)-\(day)"
     }
     
@@ -85,15 +87,15 @@ class HomeViewController: UIViewController {
         let loader = animateLoader()
         
         fetcher.postEntry(body: body)
-            .done { successResponse in
-                if successResponse.success == "true" {
-                    print("Succeeded")
-                    let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    self.presentSheet(message: "SUCCESS!", actions: [ok], preferredStyle: .alert)
-                } else {
-                    print("Failed")
-                }
-            }.catch{ log.error($0) }
+                .done { successResponse in
+    //                if successResponse.success == "true" {
+                        print("Succeeded")
+                        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        self.presentSheet(message: "SUCCESS!", actions: [ok], preferredStyle: .alert)
+    //                } else {
+    //                    print("Failed")
+    //                }
+                }.catch{ log.error($0) }
             .finally {
                 /// Clear all
                 self.workoutTimeField.text = ""

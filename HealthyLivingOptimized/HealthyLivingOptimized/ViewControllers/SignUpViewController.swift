@@ -59,7 +59,7 @@ class SignUpViewController: FormViewController {
             }
             <<< EmailRow() { row in
                 row.title = "Email"
-                row.value = "robinson.paz.jesus+@gmail.com"
+                row.value = "robinson.paz.jesus@gmail.com"
                 self.email = row.value
             }.onChange{ row in
                 self.email = row.value

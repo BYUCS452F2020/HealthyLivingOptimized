@@ -18,6 +18,7 @@ public enum Resource {
     case getRecommendation
     case updateProfile
     case postDailyEntry
+    case deleteEntry(String, String)
     
     public var resource: (method: HTTPMethod, route: String) {
         switch self {
@@ -31,6 +32,8 @@ public enum Resource {
             return (.patch, "/me/profile")
         case .postDailyEntry:
             return (.post, "/me/history")
+        case .deleteEntry(let entryId, let email):
+            return (.delete, "/me/history?entryId=\(entryId)&email=\(email)")
             
         }
     }

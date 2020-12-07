@@ -85,5 +85,25 @@ extension HistoryViewController: UICollectionViewDataSource, UICollectionViewDel
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let entry = self.entries?[indexPath.item] else { return }
+        print("DELETING: ", entry)
+        let id = entry.entryId
+        let loader = animateLoader()
+        let email = NetworkProxy.shared.getEmail()!
+        fetcherController.deleteEntry(with: id, for: email)
+            .done { _ in
+                self.entries?.remove(at: indexPath.row)
+                self.collectionView.deleteItems(at: [indexPath])
+            }.catch({
+                log.error($0)
+                self.entries?.remove(at: indexPath.row)
+                self.collectionView.deleteItems(at: [indexPath])
+                
+            })
+            .finally {
+                loader.stopAnimating()
+            }
+    }
     
 }

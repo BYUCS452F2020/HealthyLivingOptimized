@@ -12,8 +12,9 @@ struct Assets {
     struct Image {
         
         /// Using
-         static let arrowShareFill = UIImage(systemName: "arrowshape.turn.up.left.fill")?.withRenderingMode(.alwaysTemplate)
+        static let arrowShareFill = UIImage(systemName: "arrowshape.turn.up.left.fill")?.withRenderingMode(.alwaysTemplate)
         static let tray = UIImage(systemName: "tray.fill")?.withRenderingMode(.alwaysTemplate)
+        static let trashCan = UIImage(systemName: "trash")?.withRenderingMode(.alwaysTemplate)
         
         static let logo = UIImage(named: "logo")
         static let background = UIImage(named: "background")

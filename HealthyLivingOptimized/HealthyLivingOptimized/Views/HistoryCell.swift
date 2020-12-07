@@ -32,6 +32,12 @@ class HistoryCell: UICollectionViewCell {
         bind()
     }
     
+    let deleteIcon: UIImageView = {
+        let image = UIImageView(image: Assets.Image.trashCan)
+        image.tintColor = .black
+        return image
+    }()
+    
     func setupViews() {
         contentView.backgroundColor = .white
         
@@ -40,6 +46,10 @@ class HistoryCell: UICollectionViewCell {
         mainStack.axis = .vertical
         contentView.addSubview(mainStack)
         mainStack.fillSuperview(padding: UIEdgeInsets(top: 16, left: 32, bottom: 16, right: 32))
+        
+        /// Delete
+        contentView.addSubview(deleteIcon)
+        deleteIcon.anchor(bottom: contentView.bottomAnchor, right: contentView.rightAnchor, bCons: 8, rCons: 12, widthCons: 30, heightCons: 30)
     }
     
     func bind() {

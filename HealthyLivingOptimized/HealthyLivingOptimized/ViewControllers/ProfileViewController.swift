@@ -61,7 +61,7 @@ class ProfileViewController: UIViewController {
         nameField.text = "\(profile.firstName) \(profile.lastName)"
         emailField.text = profile.email
         
-        heightField.text = "\(profile.heightInInches) inches"
+        heightField.text = "\(profile.height) inches"
         weightField.text = "\(profile.weight) pounds"
         ageField.text = "\(profile.age) years old"
         genderField.text = "\(profile.gender)"
