@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS User (
 Email varchar(30) PRIMARY KEY,
-Password varchar(20) NOT NULL,
 First_name varchar(20) NOT NULL,
-Last_name varchar(20) NOT NULL
+Last_name varchar(20) NOT NULL,
+Gender enum ("Male", "Female")
 );
 
 CREATE TABLE IF NOT EXISTS BodyMetrics (
@@ -13,6 +13,13 @@ Weight integer(3) NOT NULL,
 Height_in_inches integer(3) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS Goals (
+Goal_id varchar(20) PRIMARY KEY,
+Email varchar(30) NOT NULL,
+Goal enum ('Weight Loss', 'Target Weight', 'Improved Mood', 'Muscle Gain'),
+Target_weight integer(3)
+);
+
 CREATE TABLE IF NOT EXISTS LifestyleStats (
 Stats_id varchar(20) PRIMARY KEY,
 Email varchar(30) NOT NULL,
@@ -20,12 +27,8 @@ Date date NOT NULL,
 Hours_of_sleep integer(2) NOT NULL,
 Grams_of_protein integer(3) NOT NULL,
 Type_of_exercise enum ('HIIT', 'Cardio', 'Strength Training', 'Mobility'),
-Minutes_of_exercise integer(3) NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS Goals (
-Goal_id varchar(20) PRIMARY KEY,
-Email varchar(30) NOT NULL,
-Goal enum ('Weight Loss', 'Target Weight', 'Improved Mood', 'Muscle Gain'),
-Target_weight integer(3)
+Minutes_of_exercise integer(3) NOT NULL,
+Current_weight integer(3),
+Mood enum ("Happy", "Sad", "Determined", "Frustrated", "Angry"),
+Muscle_growth enum ("Yes", "No", "N/A", "Not Sure")
 );
